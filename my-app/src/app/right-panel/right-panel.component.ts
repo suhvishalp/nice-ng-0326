@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { StudentComponent } from "../student/student.component";
 
 @Component({
   selector: 'app-right-panel',
-  imports: [],
+  imports: [StudentComponent],
   templateUrl: './right-panel.component.html',
   styleUrl: './right-panel.component.css'
 })
