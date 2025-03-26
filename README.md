@@ -128,3 +128,19 @@ Use Cases:
     - create angular project 
 
          - ng new my-app
+
+    <app-header />
+
+    @Component({
+        selector: 'app-header',
+        templateUrl: './header.component.html',
+        styles: []
+    })
+    export class Header {
+        //data members / fields
+        ..
+
+        ...
+
+        //logic 
+    }
