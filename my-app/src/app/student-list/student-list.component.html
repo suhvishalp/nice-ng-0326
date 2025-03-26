@@ -1,0 +1,45 @@
+
+    @for (stud of studentData; track stud.id) {
+        <app-single-student (onShowClick)="handleOnShowClick($event)" [student]="stud" />
+    }
+
+
+    @if (selectedStudent == undefined) {
+        <div class="accordion" id="accordionExample">
+            @for(course of getCourseOfSelectedStudent(); track course.courseName) {
+                    <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{course.courseName}}
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                        <p><strong>Start Date: </strong> {{course.startDate}}</p>
+                        <p><strong>End Date: </strong> {{course.endDate}}</p>
+                        <p><strong>Topics: </strong> {{course.topicsLearned}}</p>
+                        </div>
+                    </div>
+                    </div>
+            }
+        </div>
+    } @else {
+       <div>
+        <h1>No Course Found!</h1>
+       </div>
+    }
+
+    <!-- 
+        <div *ngFor="let stud of studentData">
+            <app-single-student [student]="stud" />
+        </div>
+
+     -->
+    
+
+    <!-- 
+        <app-single-student [student]="studentData[1]" />
+
+    <app-single-student [student]="studentData[2]" />
+
+    <app-single-student [student]="studentData[3]" /> -->

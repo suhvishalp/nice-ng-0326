@@ -1,8 +1,16 @@
-<div class="card" style="width: 18rem;">
-    <img [src]="imageUrl" class="card-img-top" [alt]="studentName">
-    <div class="card-body">
-      <h5 class="card-title">{{studentName}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <button class="btn btn-primary">Show Another Student</button>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="imageUrl()" class="img-fluid rounded-start" [alt]="student().name">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{student().name}}</h5>
+        <p class="card-text">Address : {{student().address}}</p>
+        <p class="card-text">City : {{student().city}}</p>
+
+        <button (click)="handleShowAnotherStduent()" class="btn btn-primary">Show Another Student</button>
+      </div>
     </div>
   </div>
+</div>

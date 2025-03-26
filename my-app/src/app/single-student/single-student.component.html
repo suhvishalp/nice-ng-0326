@@ -1,0 +1,12 @@
+<p class="d-inline-flex gap-1">
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#{{student()?.id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+      {{student()?.name}}
+    </a>
+  </p>
+  <div class="collapse" [id]="student()?.id">
+    <div class="card card-body">
+      <p>Address :  {{student()?.address}}</p>
+      <p>City :  {{student()?.city}}</p>
+      <button (click)="handleShowClick()" class="btn btn-primary">Show Courses</button>
+    </div>
+</div>
