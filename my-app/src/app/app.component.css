@@ -1,0 +1,15 @@
+.my-header{
+    background-color: #181D27;
+    height: 150px;
+    color:#A7A7A9;
+}
+
+.left-panel{
+    background-color: #453F3C;
+    height: 800px;
+    color:#A7A7A9;
+}
+
+.right-panel{
+    background-color: #bfbfbf;
+}
