@@ -177,6 +177,16 @@ interface ValidatorFn {
 
 
 
- interface AsyncValidatorFn {
+interface AsyncValidatorFn {
   (control: AbstractControl<any, any>): Promise<ValidationErrors | null> | Observable<ValidationErrors | null>;
 }
+
+
+
+
+Observable:
+----------------------
+    - represents an async stream of data that can emit values over time
+    - you can subscribe the observables and react to changes
+
+    

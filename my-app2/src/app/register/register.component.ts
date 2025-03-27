@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Observable, delay, map, of } from 'rxjs';
+import { AuthService } from '../services/auth.service';
+import { UserRegistrationData } from '../model/user-registration-data.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   imports: [FormsModule, ReactiveFormsModule],
-  templateUrl: './register.component.html',
+  
+templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit{
 
   registerForm!: FormGroup
 
-  constructor(private formBuilder:FormBuilder){
+  constructor(private formBuilder:FormBuilder, 
+    private authService:AuthService,
+    private router:Router){
   }
 
   ngOnInit(): void {
@@ -29,7 +35,27 @@ export class RegisterComponent implements OnInit{
 
   handleSubmit() {
     console.log('register form is submitted')
-    console.log(this.registerForm)
+    console.log(this.registerForm.value)
+
+    const {email, password} = this.registerForm.value;
+
+    const userRegistration: UserRegistrationData = {
+      email, password
+    }
+
+    this.authService.register(userRegistration)
+      .subscribe({
+        next: (response)=> {
+          //handle success response
+          alert('Registration Successful!')
+          //navigate to homepage
+          this.router.navigate(['/']);
+        },
+        error: (error)=> {
+          console.log('registration failed ', error)
+        }
+      })
+
   }
 
   public get firstNameControl() {

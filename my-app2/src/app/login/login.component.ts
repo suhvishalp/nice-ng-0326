@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormsModule, NgForm } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +11,24 @@ import { FormGroup, FormsModule, NgForm } from '@angular/forms';
 })
 export class LoginComponent {
 
+  constructor(private auth:AuthService, private router:Router){}
 
   onSubmit(loginForm:NgForm){
-    console.log('Form is submitted')
-    console.log(loginForm)
-    //console.log(loginForm.value)
+    
+    if (loginForm.valid) {
+      const { email, password } = loginForm.value;
+      this.auth.login(email, password).subscribe({
+        next: (res) => {
+          console.log('Login successful', res);
+          // Navigate to home page after login
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.error('Login failed', err);
+          alert('Login failed. Please check your credentials.');
+        }
+      });
+    
   }
+}
 }
