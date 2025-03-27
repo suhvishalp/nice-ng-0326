@@ -1,0 +1,44 @@
+<h1>Login</h1>
+
+<form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" 
+        class="form-control" 
+        id="email" 
+        name="email"
+        ngModel
+        #email="ngModel"                 
+        required
+        minlength="4"
+        email
+        aria-describedby="emailHelp">
+     
+    @if (email.invalid && email.touched){
+        <div>
+           @if (email.errors?.['required']) {
+            <small class="text-danger">Email is required</small>
+           } 
+           @if (email.errors?.['minlength']) {
+            <small class="text-danger">Min length of email should be {{email.errors?.['minlength.requiredLength']}} </small>
+           } 
+           @if (email.errors?.['email']) {
+            <small class="text-danger">Email should be valid</small>
+           } 
+         </div>
+     }
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" 
+        class="form-control" 
+        id="password"
+        ngModel
+        required
+        name="password">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

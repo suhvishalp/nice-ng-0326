@@ -144,3 +144,39 @@ Use Cases:
 
         //logic 
     }
+
+
+
+    FormGroup 
+        - FormGroup instance is used to track aggregate form value and validation status.
+
+    FormControl
+        - FormControl instance is used to track value and validation status of an individual form element 
+
+    
+    Template Driven Forms 
+        - the FormGroup and FormControl objects are created implicitely just by adding some directives i.e. ngForm, ngModel in the template 
+
+
+    Reactive Forms 
+        - the FormGroup and FormControl objects are created explicitely in the TS code 
+
+
+new FormControl(
+    value: FormControlState<T> | T,
+    validatorOrOpts?: ValidatorFn | ValidatorFn[] | FormControlOptions | null, 
+    asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null)
+
+
+interface ValidatorFn {
+  (control: AbstractControl<any, any>): ValidationErrors | null;
+}
+
+ - this type represents a type for a validator function
+ - there are some predefined validtor functions avaialble in class "Validators"
+
+
+
+ interface AsyncValidatorFn {
+  (control: AbstractControl<any, any>): Promise<ValidationErrors | null> | Observable<ValidationErrors | null>;
+}
