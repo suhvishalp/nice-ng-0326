@@ -2,14 +2,17 @@ import { Component } from '@angular/core';
 import { FormGroup, FormsModule, NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
+  
 
   constructor(private auth:AuthService, private router:Router){}
 

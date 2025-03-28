@@ -190,3 +190,65 @@ Observable:
     - you can subscribe the observables and react to changes
 
     
+
+        {{currentDate | date: 'dd/MM/YY' : ''}}
+
+    @Pipe({
+        selector: 'date'
+    })
+   class DatePipe implements PipeTransform {
+        constructor(locale: string, defaultTimezone?: string | null | undefined, defaultOptions?: DatePipeConfig | null | undefined): DatePipe;
+  
+  transform(value: string | number | Date, format?: string | undefined, timezone?: string | undefined, locale?: string | undefined): string | null;
+  
+  
+  transform(value: null | undefined, format?: string | undefined, timezone?: string | undefined, locale?: string | undefined): null;
+  
+  transform(value: string | number | Date | null | undefined, format?: string | undefined, timezone?: string | undefined, locale?: string | undefined): string | null;
+}
+
+
+npm install @ngrx/store @ngrx/store-devtools @ngrx/effects 
+
+ng add @ngrx/store
+ng add @ngrx/schematics 
+
+ng g s MyStore              //src/app/reducer
+
+
+        initialState = {
+            count : 0, 
+            xxx: yyyy,
+            xxx: zzzz, 
+            kkkk: xxx
+        }
+
+
+
+
+        function reducer(state, action){
+
+                swtich(action.type){
+
+                    case 'INCREMENT':
+                        return { ...state,  count: state.count + 1 }
+                        break;
+
+                    case 'DECREMENT':
+                        return { ..state, count: state.count - 1 }
+                        break;
+                }
+        }
+
+
+
+
+
+TEST LINK
+---------------------------
+https://exams.vinsys.com/exam/Angular17Test2803
+
+
+FEEDBACK LINK
+---------------------------
+https://feedbackind.vinsys.com/Indiafeedback.html?batch_id%3D2855

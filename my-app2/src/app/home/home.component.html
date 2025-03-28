@@ -1,1 +1,35 @@
 <p>home works!</p>
+
+<!-- <h3>Date - default: {{ currentDate }}</h3>
+
+<h3>Date - short: {{ currentDate | date:'dd / MMM / yyyy' }}</h3> -->
+
+<!-- Currency Pipe Example -->
+<!-- <p><strong>Price (currency):</strong> {{ price | currency:'INR' }}</p> -->
+
+<!-- Text Transformation Pipes -->
+<!-- <p><strong>Text (uppercase):</strong> {{ text | uppercase }}</p>
+<p><strong>Text (lowercase):</strong> {{ text | lowercase }}</p>
+<p><strong>Text (titlecase):</strong> {{ text | titlecase }}</p> -->
+
+<!-- JSON Pipe Example -->
+<!-- <p><strong>Object (json):</strong> {{ objectData | json }}</p>
+
+<p><strong>Text (reverse):</strong> {{ text | reverse:true }}</p> -->
+
+
+<h1 [appHighLight]=" 'lightgreen'  ">This is Heading</h1>
+
+<h2 [appHighLight]=" 'lightblue'  ">This is heading 2</h2>
+
+<h1>Count : {{ count | async }}</h1>
+
+<button (click)="handleIncrement()" class="btn btn-primary">
+    Increment
+</button>
+
+<br />
+
+<button (click)="handleDecrement()" class="btn btn-primary">
+    Decrement
+</button>

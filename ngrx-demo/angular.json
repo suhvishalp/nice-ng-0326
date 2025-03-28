@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-app2": {
+    "ngrx-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-app2",
+            "outputPath": "dist/ngrx-demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,12 +27,9 @@
               }
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-app2:build:production"
+              "buildTarget": "ngrx-demo:build:production"
             },
             "development": {
-              "buildTarget": "my-app2:build:development"
+              "buildTarget": "ngrx-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,10 +92,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "schematicCollections": [
-      "@ngrx/schematics"
-    ]
   }
 }
