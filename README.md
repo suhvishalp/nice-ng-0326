@@ -252,3 +252,8 @@ https://exams.vinsys.com/exam/Angular17Test2803
 FEEDBACK LINK
 ---------------------------
 https://feedbackind.vinsys.com/Indiafeedback.html?batch_id%3D2855
+
+
+ngrx demo application for reference
+------------------------------------------
+https://github.com/angular-university/ngrx-course
